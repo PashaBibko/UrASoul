@@ -1,15 +1,7 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public partial class Player : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] Rigidbody m_Body;
-
-    [Header("Settings")]
-    [SerializeField] int[] m_Rows;
-    [SerializeField] float m_FowardsForce;
-    [SerializeField] float m_SideForce;
-
     // Member variables //
     int m_RowIndex = 2;
 
@@ -20,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     bool m_Grounded;
 
     // Only instance of player with a getter //
-    static PlayerMovement s_Instance = null;
-    public PlayerMovement Instance() => s_Instance;
+    static Player s_Instance = null;
+    public Player Instance() => s_Instance;
 
     // Util helper functions to set positions //
     public void SetX(float val)
@@ -56,15 +48,15 @@ public class PlayerMovement : MonoBehaviour
         m_Grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f);
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         // Makes the player move constantly fowards //
-        m_Body.AddForce(Vector3.forward * 10, ForceMode.Force);
+        m_Body.AddForce(Vector3.forward * 50, ForceMode.Force);
 
         // Jumps if the player pressed SPACE and they are grounded //
         if (m_JumpQueued && m_Grounded)
         {
-            m_Body.AddForce(Vector3.up * 80, ForceMode.Force);
+            m_Body.AddForce(Vector3.up * 350, ForceMode.Force);
         }
 
         // Sets the player to the correct lane //
