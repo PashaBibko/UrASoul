@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Body: {fileID: 8842700056975991269}
+  m_FowardsForce: 10
+  m_SideForce: 2
 --- !u!1 &9065335375122833216
 GameObject:
   m_ObjectHideFlags: 0
