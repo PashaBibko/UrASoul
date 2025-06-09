@@ -6,15 +6,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody m_Body;
 
     [Header("Settings")]
+    [SerializeField] int[] m_Rows;
     [SerializeField] float m_FowardsForce;
     [SerializeField] float m_SideForce;
 
     // Member variables //
-    float m_Force = 0;
+    int m_RowIndex = 2;
 
     // Only instance of player with a getter //
     static PlayerMovement s_Instance = null;
     public PlayerMovement Instance() => s_Instance;
+
+    // Util helper functions to set positions //
+    public void SetX(float val)
+    {
+        Vector3 p = m_Body.position;
+        p.x = val;
+        m_Body.position = p;
+    }
 
     private void Start()
     {
@@ -24,15 +33,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        m_Force = Input.GetAxisRaw("Horizontal");
+        // Updates the index in the array //
+        if (Input.GetKeyDown(KeyCode.A)) { m_RowIndex++; }
+        if (Input.GetKeyDown(KeyCode.D)) { m_RowIndex--; }
+
+        // Clamps the index to the bounds of the array //
+        if (m_RowIndex < 0) { m_RowIndex = 0; }
+        if (m_RowIndex > 4) { m_RowIndex = 4; }
     }
 
     private void LateUpdate()
     {
-        Vector3 v = m_Body.velocity;
-        v.x = m_Force;
-        v.z = 10.0f;
+        // Makes the player move constantly fowards //
+        Vector3 vel = m_Body.velocity;
+        vel.z = 10f;
+        m_Body.velocity = vel;
 
-        m_Body.velocity = v;
+        // Sets the player to the correct lane //
+        // TODO: Lerp between the things       //
+        SetX(m_Rows[m_RowIndex]);
     }
 }
+ 
