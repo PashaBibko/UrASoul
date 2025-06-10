@@ -1,22 +1,33 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Gets the normal of the collision //
-        Vector3 normal = collision.GetContact(0).normal;
+    // Fowards the Unity function calls to the Collide() function //
+    private void OnTriggerEnter(Collider other) => Collide(other, Vector3.zero);
+    private void OnCollisionEnter(Collision collision) => Collide(collision.collider, collision.GetContact(0).normal);
 
+    // Custom collide function to handle collisions with objects and triggers //
+    private void Collide(Collider collider, Vector3 normal)
+    {
         // If what the player collided with was an obstacle reloads the scene //
-        if (collision.collider.CompareTag("Obstacle") && normal.z < -0.95)
+        if (collider.CompareTag("Obstacle") && normal.z < -0.95)
         {
+            // Stops the player from dying if they have a soul active //
+            if (m_CurrentSoul != null)
+            {
+                m_CurrentSoul = null;
+                StartCoroutine(Phase());
+                return;
+            }
+
             SceneControl.Reload();
         }
 
         // If it is an interactable calls it's OnInteract function //
-        if (collision.collider.CompareTag("Interactable"))
+        if (collider.CompareTag("Interactable"))
         {
-            GameObject obj = collision.collider.gameObject;
+            GameObject obj = collider.gameObject;
             obj.GetComponent<Interactable>().OnInteract();
         }
     }

@@ -12,4 +12,12 @@ public partial class Player : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] int[] m_Rows;
+
+    // Member variables //
+
+    // The current soul the player is using (null if they are not using any) //
+    Soul m_CurrentSoul;
+
+    // Functions to allow other scripts to interact with the player //
+    public static void SetSoul(Soul soul) => s_Instance.m_CurrentSoul = soul;
 }
