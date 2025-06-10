@@ -4,8 +4,11 @@ public partial class Player : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        // Gets the normal of the collision //
+        Vector3 normal = collision.GetContact(0).normal;
+
         // If what the player collided with was an obstacle reloads the scene //
-        if (collision.collider.CompareTag("Obstacle"))
+        if (collision.collider.CompareTag("Obstacle") && normal.z < -0.95)
         {
             Debug.Log(collision.GetContact(0).normal);
 

@@ -66,9 +66,10 @@ public partial class Player : MonoBehaviour
         // TODO: Lerp between the things       //
         SetX(m_Rows[m_RowIndex]);
 
-        // Raycasts check if player has a object to the side of them //
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position)
+        // Doubles gravity when player is falling to make it feel more responsive //
+        Vector3 vel = m_Body.velocity;
+        if (vel.y < 0.0f) { Physics.gravity = new Vector3(0f, -25f, 0f); }
+        else { Physics.gravity = new Vector3(0f, -10f, 0f); }
     }
 }
  
