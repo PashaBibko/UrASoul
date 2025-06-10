@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
 {
     // The current section of floor the player is on //
-
     private void LateUpdate()
     {
         // Finds the section of floor the player is currently on //
@@ -26,5 +22,11 @@ public partial class Player : MonoBehaviour
         {
             Debug.LogAssertion("Player floor section could not be found");
         }
+    }
+
+    public static GameObject RandomSlope()
+    {
+        int index = Random.Range(0, s_Instance.m_SimpleSections.Length);
+        return s_Instance.m_SimpleSections[index];
     }
 }

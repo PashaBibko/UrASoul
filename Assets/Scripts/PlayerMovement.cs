@@ -13,7 +13,7 @@ public partial class Player : MonoBehaviour
 
     // Only instance of player with a getter //
     static Player s_Instance = null;
-    public Player Instance() => s_Instance;
+    public static Player Instance() => s_Instance;
 
     // Util helper functions to set positions //
     public void SetX(float val)

@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Body: {fileID: 8842700056975991269}
+  m_SimpleSections:
+  - {fileID: 6084716618813052132, guid: 7dc3badcd9f816d4bb2f317b73038918, type: 3}
   m_FloorMask:
     serializedVersion: 2
     m_Bits: 1024
