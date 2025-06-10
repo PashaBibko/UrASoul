@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 3465125871717765140, guid: b65f3888448dddd4abe8d1dfb5a7790c, type: 3}
   - {fileID: 3465125871717765140, guid: 2c9291679d7f4c94c99c87472d01316b, type: 3}
   - {fileID: 3465125871717765140, guid: 745937eaeed67ee4da50d6a715e46d1e, type: 3}
+  - {fileID: 3736065350739745224, guid: d6136a21f73b2434ca2d0cf787960b2c, type: 3}
   m_FloorMask:
     serializedVersion: 2
     m_Bits: 1024

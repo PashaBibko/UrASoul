@@ -26,7 +26,8 @@ public class Floor : MonoBehaviour
         m_Next = section.GetComponentInChildren<Floor>();
 
         // Positions the next section correctly //
-        Vector3 position = transform.position - new Vector3(0, 0, m_Next.CalculateStartLength());
+        Vector3 position = m_Start.transform.position - new Vector3(0, 0, m_Next.CalculateStartLength());
+        position.x = 0;
         section.transform.position = position;
 
         // Rotates the section correctly because I set it up wrong and now CBA to fix it so I have to code more now ig //
@@ -34,9 +35,5 @@ public class Floor : MonoBehaviour
     }
 
     // Calculates the start length of this section //
-    public float CalculateStartLength()
-    {
-        Vector3 offset = m_Start.transform.localPosition;
-        return offset.x;
-    }
+    public float CalculateStartLength() => m_Start.transform.localPosition.x;
 }
