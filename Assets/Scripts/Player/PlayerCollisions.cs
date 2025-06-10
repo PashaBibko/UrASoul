@@ -10,8 +10,6 @@ public partial class Player : MonoBehaviour
         // If what the player collided with was an obstacle reloads the scene //
         if (collision.collider.CompareTag("Obstacle") && normal.z < -0.95)
         {
-            Debug.Log(collision.GetContact(0).normal);
-
             SceneControl.Reload();
         }
 
@@ -19,7 +17,7 @@ public partial class Player : MonoBehaviour
         if (collision.collider.CompareTag("Interactable"))
         {
             GameObject obj = collision.collider.gameObject;
-            gameObject.GetComponent<Interactable>().OnInteract();
+            obj.GetComponent<Interactable>().OnInteract();
         }
     }
 }
