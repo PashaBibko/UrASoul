@@ -29,9 +29,6 @@ public partial class Player : MonoBehaviour
         // If there is another instance throws an error (only in Unity and not builds) //
         Debug.Assert(s_Instance == null, "Multiple player instances", this);
         s_Instance = this;
-
-        // Tells raycast what to check collisions for //
-        //LayerMask layermask = LayerMask.GetMask("Obstacle");
     }
 
     private void Update()
