@@ -29,6 +29,9 @@ public partial class Player : MonoBehaviour
         // If there is another instance throws an error (only in Unity and not builds) //
         Debug.Assert(s_Instance == null, "Multiple player instances", this);
         s_Instance = this;
+
+        // Tells raycast what to check collisions for //
+        //LayerMask layermask = LayerMask.GetMask("Obstacle");
     }
 
     private void Update()
@@ -62,6 +65,10 @@ public partial class Player : MonoBehaviour
         // Sets the player to the correct lane //
         // TODO: Lerp between the things       //
         SetX(m_Rows[m_RowIndex]);
+
+        // Raycasts check if player has a object to the side of them //
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position)
     }
 }
  
