@@ -16,10 +16,11 @@ public class MainMenuScript : MonoBehaviour
 
     }
 
+    //both of these happen on button pressed in the main menu
     public void PlayGame()
     {
         Debug.Log("PlayGame");
-        //SceneManager.LoadScene()
+        
     }
 
     public void ExitGame()
