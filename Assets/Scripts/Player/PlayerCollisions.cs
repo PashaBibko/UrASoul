@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
@@ -12,6 +10,13 @@ public partial class Player : MonoBehaviour
             Debug.Log(collision.GetContact(0).normal);
 
             SceneControl.Reload();
+        }
+
+        // If it is an interactable calls it's OnInteract function //
+        if (collision.collider.CompareTag("Interactable"))
+        {
+            GameObject obj = collision.collider.gameObject;
+            gameObject.GetComponent<Interactable>().OnInteract();
         }
     }
 }
