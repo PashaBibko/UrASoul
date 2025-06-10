@@ -62,6 +62,11 @@ public partial class Player : MonoBehaviour
         // Sets the player to the correct lane //
         // TODO: Lerp between the things       //
         SetX(m_Rows[m_RowIndex]);
+
+        // Doubles gravity when player is falling to make it feel more responsive //
+        Vector3 vel = m_Body.velocity;
+        if (vel.y < 0.0f) { Physics.gravity = new Vector3(0f, -25f, 0f); }
+        else { Physics.gravity = new Vector3(0f, -10f, 0f); }
     }
 }
  

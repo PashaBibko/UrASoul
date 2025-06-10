@@ -24,6 +24,7 @@ public partial class Player : MonoBehaviour
         }
     }
 
+    // Returns a random slope from the array //
     public static GameObject RandomSlope()
     {
         int index = Random.Range(0, s_Instance.m_SimpleSections.Length);
