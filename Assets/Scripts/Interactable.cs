@@ -3,8 +3,13 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] UnityEvent m_Event;
+    UnityEvent m_Event;
 
-    // Invokes the event if it is valid //
+    Interactable()
+    {
+        m_Event = new();
+    }
+
     public void OnInteract() => m_Event?.Invoke();
+    public void Add(UnityAction action) => m_Event.AddListener(action);
 }

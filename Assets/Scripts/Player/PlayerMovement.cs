@@ -39,7 +39,7 @@ public partial class Player : MonoBehaviour
         m_JumpQueued = Input.GetKey(KeyCode.Space);
 
         // Casts a ray downwards to check if grounded //
-        m_Grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f);
+        m_Grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f) && m_Body.useGravity;
 
         // Calls Soul Update function (if it can) //
         if (m_CurrentSoul != null)
@@ -64,6 +64,15 @@ public partial class Player : MonoBehaviour
         // Makes the player move constantly fowards //
         m_Body.AddForce(Vector3.forward * 50, ForceMode.Force);
 
+        // Calls Soul Update function (if it can) //
+        if (m_CurrentSoul != null)
+        {
+            if (m_CurrentSoul.OnFixedUpdate())
+            {
+                return;
+            }
+        }
+
         // Jumps if the player pressed SPACE and they are grounded //
         if (m_JumpQueued && m_Grounded)
         {
@@ -82,7 +91,13 @@ public partial class Player : MonoBehaviour
 
     IEnumerator Phase()
     {
-        yield return new WaitForSeconds(1);
+        m_Collider.isTrigger = true;
+        m_Body.useGravity = false;
+        yield return new WaitForSeconds(2.5f);
+        m_Collider.isTrigger = false;
+        m_Body.useGravity = true;
+
+        Debug.Log("Invicibility ended");
     }
 }
  
