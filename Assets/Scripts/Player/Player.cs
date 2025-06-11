@@ -6,9 +6,12 @@ public partial class Player : MonoBehaviour
     [Header("References")]
     [SerializeField] Rigidbody m_Body;
     [SerializeField] Collider m_Collider;
-    [SerializeField] Text m_SoulText;
 
     [SerializeField] GameObject[] m_SimpleSections;
+
+    [Header("Text")]
+    [SerializeField] Text m_SoulText;
+    [SerializeField] Text m_SpeedText;
 
     [Header("Layer masks")]
     [SerializeField] LayerMask m_FloorMask;

@@ -31,6 +31,19 @@ public partial class Player : MonoBehaviour
         // If there is another instance throws an error (only in Unity and not builds) //
         Debug.Assert(s_Instance == null, "Multiple player instances", this);
         s_Instance = this;
+
+        // Starts the loop of slowly speeding the game up //
+        Time.timeScale = 1.0f;
+        StartCoroutine(SpeedUp());
+    }
+
+    IEnumerator SpeedUp()
+    {
+        while (Time.timeScale < 15.0f)
+        {
+            yield return new WaitForSecondsRealtime(5.0f);
+            Time.timeScale += 0.1f;
+        }
     }
 
     private void Update()
@@ -61,6 +74,9 @@ public partial class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Slowly increases the speed //
+        m_SpeedText.text = "Speed: " + ((int)(Time.timeScale / 10)).ToString();
+
         // Makes the player move constantly fowards //
         m_Body.AddForce(Vector3.forward * 50, ForceMode.Force);
 
