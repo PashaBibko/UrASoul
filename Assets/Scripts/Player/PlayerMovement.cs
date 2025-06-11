@@ -1,3 +1,5 @@
+using System.Collections;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
@@ -29,15 +31,24 @@ public partial class Player : MonoBehaviour
         // If there is another instance throws an error (only in Unity and not builds) //
         Debug.Assert(s_Instance == null, "Multiple player instances", this);
         s_Instance = this;
-
-        // Tells raycast what to check collisions for //
-        //LayerMask layermask = LayerMask.GetMask("Obstacle");
     }
 
     private void Update()
     {
         // Checks user input //
         m_JumpQueued = Input.GetKey(KeyCode.Space);
+
+        // Casts a ray downwards to check if grounded //
+        m_Grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f);
+
+        // Calls Soul Update function (if it can) //
+        if (m_CurrentSoul != null)
+        {
+            if (m_CurrentSoul.OnUpdate())
+            {
+                return;
+            }
+        }
 
         // Updates the index in the array //
         if (Input.GetKeyDown(KeyCode.A)) { m_RowIndex++; }
@@ -46,9 +57,6 @@ public partial class Player : MonoBehaviour
         // Clamps the index to the bounds of the array //
         if (m_RowIndex < 0) { m_RowIndex = 0; }
         if (m_RowIndex > 4) { m_RowIndex = 4; }
-
-        // Casts a ray downwards to check if grounded //
-        m_Grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f);
     }
 
     private void FixedUpdate()
@@ -66,9 +74,15 @@ public partial class Player : MonoBehaviour
         // TODO: Lerp between the things       //
         SetX(m_Rows[m_RowIndex]);
 
-        // Raycasts check if player has a object to the side of them //
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position)
+        // Doubles gravity when player is falling to make it feel more responsive //
+        Vector3 vel = m_Body.velocity;
+        if (vel.y < 0.0f) { Physics.gravity = new Vector3(0f, -25f, 0f); }
+        else { Physics.gravity = new Vector3(0f, -10f, 0f); }
+    }
+
+    IEnumerator Phase()
+    {
+        yield return new WaitForSeconds(1);
     }
 }
  
