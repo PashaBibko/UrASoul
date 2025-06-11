@@ -57,7 +57,7 @@ public partial class Player : MonoBehaviour
         // Calls Soul Update function (if it can) //
         if (m_CurrentSoul != null)
         {
-            if (m_CurrentSoul.OnUpdate())
+            if (m_CurrentSoul.OnUpdate(ref m_RowIndex))
             {
                 return;
             }
