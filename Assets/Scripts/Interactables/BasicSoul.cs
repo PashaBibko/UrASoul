@@ -4,11 +4,11 @@ public class BasicSoul : Soul
 {
     public override bool OnFixedUpdate()
     {
-        return false;
+        return CONTINUE_AFTER_FUNCTION;
     }
 
-    public override bool OnUpdate()
+    public override bool OnUpdate(ref int index)
     {
-        return false;
+        return CONTINUE_AFTER_FUNCTION;
     }
 }
