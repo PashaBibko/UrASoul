@@ -17,6 +17,7 @@ public partial class Player : MonoBehaviour
             if (m_CurrentSoul != null)
             {
                 m_CurrentSoul = null;
+                m_SoulText.text = "Current Soul: ";
                 StartCoroutine(Phase());
                 return;
             }
