@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2281765203786238040}
-  - component: {fileID: 6497801066284310799}
-  - component: {fileID: 5261218579401393508}
+  - component: {fileID: 6460306956743294956}
   - component: {fileID: 7778336423317606059}
   - component: {fileID: 3717875978466756322}
   - component: {fileID: 7885314649238813109}
@@ -36,7 +35,7 @@ Transform:
   m_Father: {fileID: 4000991754458960168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6497801066284310799
+--- !u!114 &6460306956743294956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,34 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3277176582751826564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b595e38754deed448bca97254e17ef13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5261218579401393508}
-        m_TargetAssemblyTypeName: Soul, Assembly-CSharp
-        m_MethodName: OnInteractCollision
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5261218579401393508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3277176582751826564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875de6f57d81b954684f1edc1277122b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a608d3a98363874280275714a1eee6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!33 &7778336423317606059
