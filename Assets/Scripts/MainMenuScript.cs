@@ -20,7 +20,7 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("PlayGame");
-        
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void ExitGame()
