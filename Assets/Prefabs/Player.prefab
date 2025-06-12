@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7884947633435231586}
   - component: {fileID: 6150089138268869085}
   - component: {fileID: 2150443546196795918}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3368073575539032603}
   - component: {fileID: 9067824294351661755}
   - component: {fileID: 8842700056975991269}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,10 +154,13 @@ MonoBehaviour:
   - {fileID: 3465125871717765140, guid: 2c9291679d7f4c94c99c87472d01316b, type: 3}
   - {fileID: 3465125871717765140, guid: 745937eaeed67ee4da50d6a715e46d1e, type: 3}
   - {fileID: 3736065350739745224, guid: d6136a21f73b2434ca2d0cf787960b2c, type: 3}
+  m_SoulText: {fileID: 0}
+  m_SpeedText: {fileID: 0}
   m_FloorMask:
     serializedVersion: 2
     m_Bits: 1024
   m_Rows: 020000000100000000000000fffffffffeffffff
+  m_CurrentSoul: {fileID: 0}
 --- !u!54 &8842700056975991269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -185,7 +188,7 @@ GameObject:
   - component: {fileID: 1664417249541466846}
   - component: {fileID: 1001871991073981223}
   - component: {fileID: 6102998353229828536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

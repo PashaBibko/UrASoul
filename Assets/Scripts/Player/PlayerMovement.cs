@@ -1,5 +1,4 @@
 using System.Collections;
-using System.ComponentModel.Design;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
@@ -63,6 +62,8 @@ public partial class Player : MonoBehaviour
             }
         }
 
+        int oldIndex = m_RowIndex;
+
         // Updates the index in the array //
         if (Input.GetKeyDown(KeyCode.A)) { m_RowIndex++; }
         if (Input.GetKeyDown(KeyCode.D)) { m_RowIndex--; }
@@ -70,6 +71,12 @@ public partial class Player : MonoBehaviour
         // Clamps the index to the bounds of the array //
         if (m_RowIndex < 0) { m_RowIndex = 0; }
         if (m_RowIndex > 4) { m_RowIndex = 4; }
+
+        // If the row is not clear set's it to the previous value //
+        if (Follower.IsRowClear(m_RowIndex) == false)
+        {
+            m_RowIndex = oldIndex;
+        }
     }
 
     private void FixedUpdate()
