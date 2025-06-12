@@ -38,10 +38,16 @@ public partial class Player : MonoBehaviour
 
     IEnumerator SpeedUp()
     {
+        while (Time.timeScale < 3.0f)
+        {
+            yield return new WaitForSecondsRealtime(10.0f);
+            Time.timeScale += 0.1f;
+        }
+
         while (Time.timeScale < 15.0f)
         {
-            yield return new WaitForSecondsRealtime(5.0f);
-            Time.timeScale += 0.1f;
+            yield return new WaitForSecondsRealtime(20.0f);
+            Time.timeScale += 0.05f;
         }
     }
 
@@ -85,7 +91,7 @@ public partial class Player : MonoBehaviour
         m_SpeedText.text = "Speed: " + Time.timeScale.ToString();
 
         // Makes the player move constantly fowards //
-        m_Body.AddForce(Vector3.forward * 50, ForceMode.Force);
+        m_Body.AddForce(Vector3.forward * 35, ForceMode.Force);
 
         // Calls Soul Update function (if it can) //
         if (m_CurrentSoul != null)
@@ -99,7 +105,7 @@ public partial class Player : MonoBehaviour
         // Jumps if the player pressed SPACE and they are grounded //
         if (m_JumpQueued && m_Grounded)
         {
-            m_Body.AddForce(Vector3.up * 350, ForceMode.Force);
+            m_Body.AddForce(Vector3.up * 300, ForceMode.Force);
         }
 
         // Sets the player to the correct lane //
