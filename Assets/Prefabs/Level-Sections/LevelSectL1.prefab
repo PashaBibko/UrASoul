@@ -4116,6 +4116,14 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3583483569959406128, guid: ed75929ed5c9c3744b47917a579a7614, type: 3}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583483569959406128, guid: ed75929ed5c9c3744b47917a579a7614, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4891051840953047755, guid: ed75929ed5c9c3744b47917a579a7614, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
