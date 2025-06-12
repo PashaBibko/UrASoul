@@ -14,7 +14,7 @@ public partial class Player : MonoBehaviour
             Floor controller = floor.GetComponentInChildren<Floor>();
 
             // Tells the floor to spawn the next section (if not already) //
-            controller.SpawnNext();
+            controller?.SpawnNext();
         }
 
         // Throws an assert (Unity Editor only) if a floor section was not found //

@@ -1,29 +1,24 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] Button m_ExitButton;
 
+    private void Start()
+    {
+        #if UNITY_WEBGL
+                Destroy(m_ExitButton.gameObject);
+        #endif
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    //both of these happen on button pressed in the main menu
     public void PlayGame()
     {
-        Debug.Log("PlayGame");
-        SceneManager.LoadScene("SampleScene");
+        SceneControl.Load(1);
     }
 
     public void ExitGame()
     {
-        Debug.Log("ExitGame");
         Application.Quit();
     }
 }
