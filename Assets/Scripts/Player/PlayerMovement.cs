@@ -26,6 +26,13 @@ public partial class Player : MonoBehaviour
 
     private void Start()
     {
+        if (s_FirstLoad)
+        {
+            transform.position = new Vector3(0, 0, -80);
+        }
+
+        s_FirstLoad = false;
+
         // Assigns it to the global instance //
         // If there is another instance throws an error (only in Unity and not builds) //
         Debug.Assert(s_Instance == null, "Multiple player instances", this);

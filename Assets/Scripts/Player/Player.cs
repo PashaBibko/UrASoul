@@ -21,6 +21,8 @@ public partial class Player : MonoBehaviour
     [Header("Settings")]
     [SerializeField] int[] m_Rows;
 
+    static bool s_FirstLoad = true;
+
     // Member variables //
 
     // The current soul the player is using (null if they are not using any) //
