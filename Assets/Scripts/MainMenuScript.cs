@@ -12,8 +12,6 @@ public class MainMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
     }
 
     //both of these happen on button pressed in the main menu
