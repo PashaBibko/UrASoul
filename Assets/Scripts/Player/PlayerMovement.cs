@@ -82,7 +82,7 @@ public partial class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // Slowly increases the speed //
-        m_SpeedText.text = "Speed: " + ((int)(Time.timeScale / 10)).ToString();
+        m_SpeedText.text = "Speed: " + Time.timeScale.ToString();
 
         // Makes the player move constantly fowards //
         m_Body.AddForce(Vector3.forward * 50, ForceMode.Force);
@@ -119,8 +119,6 @@ public partial class Player : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         m_Collider.isTrigger = false;
         m_Body.useGravity = true;
-
-        Debug.Log("Invicibility ended");
     }
 }
  
