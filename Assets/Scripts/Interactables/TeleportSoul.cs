@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TeleportSoul : Soul
 {
-    public override bool OnFixedUpdate()
+    public override bool OnFixedUpdate(Rigidbody body, bool grounded, bool jump)
     {
         return CONTINUE_AFTER_FUNCTION;
     }

@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Body: {fileID: 8842700056975991269}
   m_Collider: {fileID: 2150443546196795918}
+  m_DisplayCanvas: {fileID: 0}
   m_SimpleSections:
   - {fileID: 6084716618813052132, guid: 7dc3badcd9f816d4bb2f317b73038918, type: 3}
   - {fileID: 3465125871717765140, guid: d07bf145c3a63694db4b44dbfdb056c3, type: 3}
@@ -154,8 +155,11 @@ MonoBehaviour:
   - {fileID: 3465125871717765140, guid: 2c9291679d7f4c94c99c87472d01316b, type: 3}
   - {fileID: 3465125871717765140, guid: 745937eaeed67ee4da50d6a715e46d1e, type: 3}
   - {fileID: 3736065350739745224, guid: d6136a21f73b2434ca2d0cf787960b2c, type: 3}
+  - {fileID: 1096327067447209126, guid: 4f969c5475694304fa40da63d4762dc2, type: 3}
+  - {fileID: 4841454003994533589, guid: 99a9541210079f94ab03a004bfdacd36, type: 3}
   m_SoulText: {fileID: 0}
   m_SpeedText: {fileID: 0}
+  m_DisplayText: {fileID: 0}
   m_FloorMask:
     serializedVersion: 2
     m_Bits: 1024

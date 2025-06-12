@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class GreedySoul : Soul
+public class LeapSoul : Soul
 {
     public override bool OnFixedUpdate(Rigidbody body, bool grounded, bool jump)
     {
-        return CONTINUE_AFTER_FUNCTION;
+        if (grounded && jump)
+        {
+            body.AddForce(Vector3.up * 500, ForceMode.Force);
+        }
+
+        return STOP_AFTER_FUNCTION;
     }
 
     public override bool OnUpdate(ref int index)

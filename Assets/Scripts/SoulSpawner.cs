@@ -5,8 +5,9 @@ public class SoulSpawner : MonoBehaviour
     // List of all the different types of souls //
     private static readonly System.Type[] m_SoulScripts =
     {
-        typeof(BasicSoul),
-        typeof(TeleportSoul)
+        typeof(GreedySoul),
+        typeof(TeleportSoul),
+        typeof(LeapSoul)
     };
 
     void Start()
