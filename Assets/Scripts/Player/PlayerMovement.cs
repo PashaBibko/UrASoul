@@ -43,6 +43,7 @@ public partial class Player : MonoBehaviour
         StartCoroutine(SpeedUp());
 
         m_DisplayCanvas.enabled = false;
+        m_DeathCanvas.enabled = false;
     }
 
     IEnumerator SpeedUp()
@@ -62,6 +63,8 @@ public partial class Player : MonoBehaviour
 
     private void Update()
     {
+        if (m_SkillIssue) { return; }
+
         // Checks user input //
         m_JumpQueued = Input.GetKey(KeyCode.Space);
 

@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
@@ -24,7 +24,7 @@ public partial class Player : MonoBehaviour
                 return;
             }
 
-            SceneControl.Reload();
+            StartCoroutine(KillDaPlayer());
         }
 
         // If it is an interactable calls it's OnInteract function //
@@ -34,4 +34,22 @@ public partial class Player : MonoBehaviour
             obj.GetComponent<Interactable>().OnInteract();
         }
     }
+
+    IEnumerator KillDaPlayer()
+    {
+        m_DeathCanvas.enabled = true;
+        Time.timeScale = 0;
+
+        m_SkillIssue = true;
+
+        while (!Input.GetKey(KeyCode.Tab))
+        {
+            Time.timeScale = 0;
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+
+        SceneControl.Reload();
+    }
+
+    bool m_SkillIssue = false;
 }

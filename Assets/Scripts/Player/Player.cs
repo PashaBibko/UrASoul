@@ -7,6 +7,7 @@ public partial class Player : MonoBehaviour
     [SerializeField] Rigidbody m_Body;
     [SerializeField] Collider m_Collider;
     [SerializeField] Canvas m_DisplayCanvas;
+    [SerializeField] Canvas m_DeathCanvas;
 
     [SerializeField] GameObject[] m_SimpleSections;
 
