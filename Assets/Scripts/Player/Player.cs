@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,12 +29,14 @@ public partial class Player : MonoBehaviour
     // Functions to allow other scripts to interact with the player //
     public static void SetSoul(Soul soul)
     {
-        // Updates the soul //
-        s_Instance.m_CurrentSoul = soul;
+        s_Instance.gameObject.AddComponent(soul.GetType());
+        s_Instance.m_CurrentSoul = (Soul)s_Instance.GetComponent(soul.GetType());
 
         // Sets the display text to display the correct type //
         string typename = soul.GetType().ToString();
         s_Instance.m_SoulText.text = "Current Soul: " + typename;
+
+        Destroy(soul.transform.parent.gameObject);
 
         SoulTracker.PlayerCollected(soul.GetType());
     }
