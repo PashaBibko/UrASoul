@@ -33,9 +33,9 @@ public static class SoulTracker
 
     private static SoulState[] s_States =
     {
-        new(typeof(GreedySoul), "Greedy Soul"),
-        new(typeof(TeleportSoul), "Teleport Soul"),
-        new(typeof(LeapSoul), "Leap soul")
+        new(typeof(GreedySoul), "Greedy soul doubles the ammount of coins you recive."),
+        new(typeof(TeleportSoul), "Teleport soul allows you to teleport to the other side of the lanes by pressing A/D on the side"),
+        new(typeof(LeapSoul), "Leap soul allows you to jump much higher (even on to tall obstacles)")
     };
 
     public static void PlayerCollected(System.Type soul)
