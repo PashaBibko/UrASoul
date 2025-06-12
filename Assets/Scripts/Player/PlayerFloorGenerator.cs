@@ -28,6 +28,6 @@ public partial class Player : MonoBehaviour
     public static GameObject RandomSlope()
     {
         int index = Random.Range(0, s_Instance.m_SimpleSections.Length);
-        return s_Instance.m_SimpleSections[index];
+        return s_Instance.m_SimpleSections[5];
     }
 }
