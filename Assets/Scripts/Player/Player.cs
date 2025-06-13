@@ -26,6 +26,8 @@ public partial class Player : MonoBehaviour
 
     static bool s_FirstLoad = true;
 
+    public static bool IsFirstLoad() => s_FirstLoad;
+
     // Member variables //
 
     // The current soul the player is using (null if they are not using any) //
