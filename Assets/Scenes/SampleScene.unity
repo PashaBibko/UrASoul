@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 117ebaa8373abd247b96f1d39d402d75, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5a998182c7d8aa04399d188cc07049e3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1121,6 +1121,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795189271}
   m_CullTransparentMesh: 1
+--- !u!114 &964692486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9042053310726809192, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
+  m_PrefabInstance: {fileID: 1051581953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8355e8a904cf72f40bfb39c055ee61d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1029059055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1314,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5447893975044553483, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6081686009127831504, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1311,10 +1326,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9042053310726809192, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
+      propertyPath: Soul
+      value: 
+      objectReference: {fileID: 8300000, guid: fe893ebd179edd14e8792a9ab8fe22bf, type: 3}
+    - target: {fileID: 9042053310726809192, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe893ebd179edd14e8792a9ab8fe22bf, type: 3}
     - target: {fileID: 9065335375122833216, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9067824294351661755, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
+      propertyPath: ms
+      value: 
+      objectReference: {fileID: 964692486}
     - target: {fileID: 9067824294351661755, guid: 52832dae7173e1044a4c4a55659f2870, type: 3}
       propertyPath: m_SoulText
       value: 

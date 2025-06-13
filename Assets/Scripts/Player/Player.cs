@@ -8,6 +8,8 @@ public partial class Player : MonoBehaviour
     [SerializeField] Collider m_Collider;
     [SerializeField] Canvas m_DisplayCanvas;
     [SerializeField] Canvas m_DeathCanvas;
+    public MusicSounds ms;
+
 
     [SerializeField] GameObject[] m_SimpleSections;
 
@@ -42,6 +44,9 @@ public partial class Player : MonoBehaviour
         Destroy(soul.transform.parent.gameObject);
 
         SoulTracker.PlayerCollected(soul.GetType());
+
+        //ms.GetComponent<MusicSounds>().PlaySoul();
+        
     }
 
     public void DisplayCanvasWith(string message)
