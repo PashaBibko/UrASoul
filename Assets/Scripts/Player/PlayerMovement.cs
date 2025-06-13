@@ -50,13 +50,13 @@ public partial class Player : MonoBehaviour
     {
         while (Time.timeScale < 3.0f)
         {
-            yield return new WaitForSeconds(10.0f * Time.timeScale);
+            yield return new WaitForSeconds(7.0f * Time.timeScale);
             Time.timeScale += 0.1f;
         }
 
         while (Time.timeScale < 15.0f)
         {
-            yield return new WaitForSeconds(20.0f * Time.timeScale);
+            yield return new WaitForSeconds(14.0f * Time.timeScale);
             Time.timeScale += 0.05f;
         }
     }

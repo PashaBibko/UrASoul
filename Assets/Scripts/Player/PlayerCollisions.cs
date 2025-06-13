@@ -9,12 +9,17 @@ public partial class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision) => Collide(collision.collider, collision.GetContact(0).normal);
     private void OnCollisionStay(Collision collision) => Collide(collision.collider, collision.GetContact(0).normal);
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+    public AudioClip clip2;
+
     // Custom collide function to handle collisions with objects and triggers //
     private void Collide(Collider collider, Vector3 normal)
     {
         // If what the player collided with was an obstacle reloads the scene //
         if (collider.CompareTag("Obstacle") && normal.z < -0.95)
         {
+            audioSource.PlayOneShot(clip2);
             // Stops the player from dying if they have a soul active //
             if (m_CurrentSoul != null)
             {
@@ -32,6 +37,7 @@ public partial class Player : MonoBehaviour
         {
             GameObject obj = collider.gameObject;
             obj.GetComponent<Interactable>().OnInteract();
+            audioSource.PlayOneShot(clip);
         }
     }
 
