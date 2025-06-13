@@ -8,6 +8,8 @@ public class TutorialSection : MonoBehaviour
     private void Start()
     {
         m_InstructionsCanvas.enabled = false;
+
+        if (Player.IsFirstLoad() == false) { Destroy(gameObject); }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +29,8 @@ public class TutorialSection : MonoBehaviour
             {
                 Time.timeScale = 1.0f;
                 m_InstructionsCanvas.enabled = false;
+
+                Destroy(gameObject);
 
                 return;
             }
